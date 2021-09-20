@@ -6,33 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Css</title>
     <style>
-        h1{
-            color: navy;
-            font-size: 56px;
+        body{
+            margin: 0;
         }
-        p{
-            color: magenta;
-        }
-
-        #para{
-            background-color: green;
-        }
-
-        .big{
-            color: red;
-            font-size: 25px;
-        }
-
-        .link{
-            font-size: 48px;
-            text-decoration: none;
+          .cars{
+              width: 1200px;
+              text-align: center;
+              margin: 0 auto;
+          }
+        .tesla,
+        .lambor,
+        .benz,
+        .mg,
+        .mastang,
+        .bmw{
+            max-width: 320px;
+            border-bottom: 25px solid red;
+            margin-top: 0;
+            margin-right: 25px;
         }
     </style>
 </head>
 <body>
-    <h1>Internal CSS</h1>
-    <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, necessitatibus inventore velit voluptates expedita ex dolores! Et, adipisci? Perferendis sequi quidem, provident beatae autem quo aliquam unde omnis, commodi aperiam maiores dolor assumenda, enim saepe a quae laudantium necessitatibus eligendi cum quaerat harum adipisci consectetur similique? Fuga, praesentium ipsam. Ullam quisquam nobis ab magni molestias fugiat corrupti quibusdam voluptates atque.</p>
 
-    <p class="big">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus vitae sint accusantium! Distinctio fuga et sapiente unde, officiis similique rem quis aperiam. <a class="link">Incidunt eum reiciendis in</a> labore accusamus omnis quis odit nemo nihil sit minus suscipit ad autem explicabo facilis, nobis sint provident! Voluptatum illo magnam eos et earum eum.</p>
+    <div class="cars">
+            <img class="tesla" src="./images/tesla.png">
+    
+            <img class="lambor" src="./images/Lamborghini-Logo.png">
+        
+            <img class="benz" src="./images/mercedes-benz-logo.jpg">
+
+            <img class="mg" src="./images/MG-Logo.jpg">
+
+            <img class="mastang" src="./images/Mustang-logo.png">
+
+            <img class="bmw"src="./images/30011-bmw-logo.png">
+    </div>
+    
+   
 </body>
 </html>
