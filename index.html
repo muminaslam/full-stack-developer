@@ -4,45 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Css</title>
+    <title>Css - Position</title>
     <style>
-        body{
+
+        /* Position: relative
+            It's relative to itself
+        */
+
+        *{
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-          .cars{
-              width: 1200px;
-              text-align: center;
-              margin: 0 auto;
-          }
-        .tesla,
-        .lambor,
-        .benz,
-        .mg,
-        .mastang,
-        .bmw{
-            max-width: 320px;
-            border-bottom: 25px solid red;
-            margin-top: 0;
-            margin-right: 25px;
+        
+        div{
+            height: 250px;
+            background-color: navy;
+            color: magenta;
+            position: relative;
+            top: 50px;
+            right: 40px; /* This is replaced by left*/
+            left: 100px;
+            /* bottom: 150px;    */
         }
+
     </style>
 </head>
 <body>
 
-    <div class="cars">
-            <img class="tesla" src="./images/tesla.png">
-    
-            <img class="lambor" src="./images/Lamborghini-Logo.png">
-        
-            <img class="benz" src="./images/mercedes-benz-logo.jpg">
-
-            <img class="mg" src="./images/MG-Logo.jpg">
-
-            <img class="mastang" src="./images/Mustang-logo.png">
-
-            <img class="bmw"src="./images/30011-bmw-logo.png">
+    <div>
+        <h1 class="">Headings inside the Div</h1>
     </div>
-    
-   
 </body>
 </html>
