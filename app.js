@@ -1,29 +1,21 @@
-// Arrow function
+// Callback function
 
-// let add = (a = 0, b = 0) => {
-//     let sum = a + b;
-//     return sum;
+let arr = ["Eat", "run", "sleep", "wake", "study"];
+
+// let callbackFunction = () => {
+//     console.log("Executed!");
 // }
 
+// arr.forEach(callbackFunction);
 
-/*
-    Declare arrow function without curly brackets and return keyword, the arrow will return the output from the function
-*/
-let add = (a = 0, b = 0) => a + b;
+// In here forEach() fucntion returns the array values/elements inside the array
 
-console.log(add(10, 40));
-
-// =================================
-
-const greet = (name) => {
-    return "Hi! " + name + " Guten Nacht";
+let callbackFunction = (list, index) => {
+    console.log(list, index);
 }
 
-console.log(greet("Elon"));
+// arr.forEach(callbackFunction);
 
-// ==================================
-
-// If we have only one parameter, this mathod will work
-const greet2 = name => "Hi! " + name + " Guten Abend";
-
-console.log(greet2("Steve"));
+arr.forEach((list, index) => {
+    console.log(list, index);
+});
