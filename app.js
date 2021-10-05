@@ -1,70 +1,4 @@
-// console.log(this);// "this" keyword is pointing to the window object
-// console.log(this.alert("Hello"));
-
-// JavaScript Object
-
-/*
-var car = {
-    model: "Lexus",
-    manufacture: "Toyota",
-    color: "white",
-    speed: function(a="100km/h"){
-        console.log(a);
-    }
-}
-
-// console.log(car);
-// console.log(typeof car);
-// console.log(car.model);
-// console.log(car.manufacture);
-// console.log(car.color);
-// car.speed("200Km/h");
-
-*/
-
-// ============================================================
-// Use "this" keyword inside the object
-
-/*
-var manufacture = "Tesla";
-var car = {
-    model: "Lexus",
-    manufacture: "Toyota",
-    color: "White",
-    speed: function(){
-        // console.log(this)
-
-        // console.log(this.manufacture);// Using "this" keyword now object is pointing to the property "manufactuere" inside the "car" object
-        let manufacture = "BMW";
-        console.log(manufacture);//It's referring to the variable outside the "car" object. So, output will be "Tesla" not "Toyota"
-    }
-}
-
-car.speed();
-// If we use "this" keyword in root or outside any function or object it will point to the globall "window" object
-
-// Now If we use "this" keyword inside the function. it will point to the object of "car"
-
-*/
-
-// ===============================================================
-// Template String
-/*
-var car = {
-    model: "GT-R",
-    manufacture: "Nissan",
-    color: "Silver",
-    speed: function(){
-        // console.log(this.model + " is manufactured by  " + this.manufacture);
-
-        // Template String
-        console.log(`${this.model} is manufacured by ${this.manufacture}`);
-    }
-}
-car.speed();
-*/
-
-// ========================================================
+// Object Methods
 
 var car = {
     model: "GT-R",
@@ -78,4 +12,11 @@ var car = {
     }
 }
 
-car.speed();
+console.log(car);
+console.log(Object);
+
+// "Object" is a global object and if you create any custom objects like "car",it will be the children object of global "Object"
+console.log(Object.keys(car));
+console.log(Object.values(car));
+console.log(Object.hasOwnProperty());
+console.log(car.hasOwnProperty("model"));//It checks whether a property exist or not in object. In here it checks the "model" property is available or not in the "car" object
