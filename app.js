@@ -1,22 +1,37 @@
-// Object Methods
+// JavaScript Promises
+// Promises has three values like FulFiled, Rejected and Pending
+// Promises is an object and it "promises to return a value".
 
-var car = {
-    model: "GT-R",
-    manufacture: "Nissan",
-    color: "White",
-    speed: () => {
-        // "this" keyword inside the arrow function points to the window object instead of inside the "car" object
-        console.log(this);
-        console.log(`${this.model} was manufactured by ${this.manufacture}`);//The output will be "undefined wwas manufactured by undefined" because "this" kwyword is pointing to the global or window object instead of "car" object
-        console.log(`${car.model} was manufactured by ${car.manufacture}`);
-    }
-}
+// setTimeout( ()=> {
+//     console.log("Steve Jobs");
+// }, 0);
 
-console.log(car);
-console.log(Object);
+// console.log("Elon Mask");
+// console.log("Tony Stark");
 
-// "Object" is a global object and if you create any custom objects like "car",it will be the children object of global "Object"
-console.log(Object.keys(car));
-console.log(Object.values(car));
-console.log(Object.hasOwnProperty());
-console.log(car.hasOwnProperty("model"));//It checks whether a property exist or not in object. In here it checks the "model" property is available or not in the "car" object
+// var data = fetch("https://jsonplaceholder.typicode.com/todos/10");
+// console.log(data);
+
+// let value = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve("Hello");
+//     }, 3000);
+// });
+
+// let response = fetch('https://jsonplaceholder.typicode.com/users')
+
+// // console.log(data)
+
+
+// setTimeout(() => {
+//     console.log(response);
+//     const data = response.json();
+//     console.log(data);
+// }, 2000);
+
+let response = fetch('https://jsonplaceholder.typicode.com/users').then(resData => resData.json()).then(data => {
+    // console.log(responseData);
+    // let parseData = responseData.json();
+    // console.log(parseData);
+    console.log(data);
+});
