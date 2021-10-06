@@ -1,21 +1,49 @@
-// Callback function
+const a = document.querySelectorAll('input')[0];
+const b = document.querySelectorAll('input')[1];
+const add = document.getElementById("add");
+const multiply = document.getElementById("multiply");
+const result = document.querySelector(".result");
 
-let arr = ["Eat", "run", "sleep", "wake", "study"];
 
-// let callbackFunction = () => {
-//     console.log("Executed!");
-// }
+const sum = () => {
+    // const result = a.value + b.value
+    // console.log(typeof result)
+    const output = parseInt(a.value) + parseInt(b.value);
+    console.log(output);
 
-// arr.forEach(callbackFunction);
-
-// In here forEach() fucntion returns the array values/elements inside the array
-
-let callbackFunction = (list, index) => {
-    console.log(list, index);
+    result.innerHTML = output;
 }
 
-// arr.forEach(callbackFunction);
+const product = () => {
+    const output = parseInt(a.value) * parseInt(b.value);
+    result.innerHTML = output;
+}
 
-arr.forEach((list, index) => {
-    console.log(list, index);
+// add.addEventListener("click", sum);
+// multiply.addEventListener("click", product);
+
+
+// Optimized Solution
+// ==================
+const calculate = (event, operator) => {
+    console.log(event.target);
+
+    if(operator == "add"){
+        const output = parseInt(a.value) + parseInt(b.value);
+        console.log(output);
+        result.innerHTML = output;
+    }else if (operator == "multiply"){
+        const output = parseInt(a.value) * parseInt(b.value);
+        console.log(output);
+        result.innerHTML = output;
+    }
+}
+
+add.addEventListener("click", function(event){
+    return calculate(event, "add");
 });
+
+multiply.addEventListener("click", function(event){
+    return calculate(event, "multiply");
+});
+
