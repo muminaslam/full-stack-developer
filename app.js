@@ -18,6 +18,7 @@
 //     }, 3000);
 // });
 
+
 // let response = fetch('https://jsonplaceholder.typicode.com/users')
 
 // // console.log(data)
@@ -29,9 +30,98 @@
 //     console.log(data);
 // }, 2000);
 
-let response = fetch('https://jsonplaceholder.typicode.com/users').then(resData => resData.json()).then(data => {
-    // console.log(responseData);
-    // let parseData = responseData.json();
-    // console.log(parseData);
-    console.log(data);
-});
+// let response = fetch('https://jsonplaceholder.typicode.com/users').then(resData => resData.json()).then(data => {
+//     // console.log(responseData);
+//     // let parseData = responseData.json();
+//     // console.log(parseData);
+//     console.log(data);
+// });
+
+
+// let arr = ["one", "two", "three"];
+// arr.forEach(chore => {
+//     const element = document.createElement("li");
+//     const textNode = document.createTextNode(chore);
+//     element.appendChild(textNode);
+
+//     element.addEventListener("click", (e) => {
+//         console.log(e.length.innerHTML);
+//         e.target.remove();
+//     });
+
+//     list.appendChild(element);
+// });
+
+
+// let value = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve("Hello Aslam");
+//     }, 3000);
+// });
+
+// console.log(value);
+
+// setTimeout(() => {
+//     console.log(value);
+// }, 3000);
+
+// Name.then(name => { console.log(name) });
+
+
+//    ul = document.querySelector("ul");
+
+//     let response = fetch('https://jsonplaceholder.typicode.com/users').then(resp => resp.json()).then(data => {
+//         console.log(data);
+
+//         append_data = (element)=>{
+//             lielement = document.createElement("li");
+//             user_detail = element['name']+element['username']+element['email']
+//             textnode = document.createTextNode(user_detail);
+//             lielement.appendChild(textnode);
+//             ul.appendChild(lielement);
+//         }
+//         data.forEach(append_data);
+//     })
+
+const table = document.querySelector("table");
+
+
+
+
+
+
+// fetch('https://jsonplaceholder.typicode.com/users')
+//     .then(res => res.json())
+//     .then(data => {
+//         console.log(data);
+//         data.forEach(user => {
+//             // console.log(user)
+//             let newRow = document.createElement("tr");
+//             let dataID = document.createElement("td");
+//             let dataIDtextNode = document.createTextNode(user.id);
+//             dataID.appendChild(dataIDtextNode);
+//             newRow.appendChild(dataID);
+//         });
+
+//     });
+
+fetch('https://jsonplaceholder.typicode.com/users')
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        data.forEach(user => {
+            // console.log(user)
+            let newRow = document.createElement("tr");
+            let element = `
+                	<td>${user.id}</td>
+                    <td>${user.name}</td>
+                    <td>${user.email}</td>
+                    <td>${user.username}</td>
+            `
+            console.log(element);
+            newRow.innerHTML = element;
+
+            table.appendChild(newRow);
+        });
+
+    });
