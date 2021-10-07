@@ -39,26 +39,26 @@
 
 const list = document.querySelector("ul");
 
-let arr = ["one", "two", "three"];
-arr.forEach(chore => {
-    const element = document.createElement("li");
-    const textNode = document.createTextNode(chore);
-    element.appendChild(textNode);
+// let arr = ["one", "two", "three"];
+// arr.forEach(chore => {
+//     const element = document.createElement("li");
+//     const textNode = document.createTextNode(chore);
+//     element.appendChild(textNode);
 
-    element.addEventListener("click", (e) => {
-        // console.log(e.target.innerHTML);
-        // e.target.remove();
-        const userInput = prompt("Are you sure that you want to delete ${chore}");
-        if(userInput == "yes"){
-            e.target.remove();
-        }
-    });
+//     element.addEventListener("click", (e) => {
+//         // console.log(e.target.innerHTML);
+//         // e.target.remove();
+//         const userInput = prompt("Are you sure that you want to delete ${chore}");
+//         if(userInput == "yes"){
+//             e.target.remove();
+//         }
+//     });
 
-    list.appendChild(element);
-});
+//     list.appendChild(element);
+// });
 
 
-// let value = new Promise((resolve, reject) => {
+// let Name = new Promise((resolve, reject) => {
 //     setTimeout(() => {
 //         resolve("Hello Aslam");
 //     }, 3000);
@@ -88,12 +88,8 @@ arr.forEach(chore => {
 //         data.forEach(append_data);
 //     })
 
-// const table = document.querySelector("table");
 
-
-
-
-
+const table = document.querySelector("table"); 
 
 // fetch('https://jsonplaceholder.typicode.com/users')
 //     .then(res => res.json())
@@ -106,9 +102,12 @@ arr.forEach(chore => {
 //             let dataIDtextNode = document.createTextNode(user.id);
 //             dataID.appendChild(dataIDtextNode);
 //             newRow.appendChild(dataID);
+
+//             table.appendChild(newRow);
 //         });
 
 //     });
+
 
 // fetch('https://jsonplaceholder.typicode.com/users')
 //     .then(res => res.json())
@@ -124,9 +123,36 @@ arr.forEach(chore => {
 //                     <td>${user.username}</td>
 //             `
 //             console.log(element);
-//             newRow.innerHTML = element;
 
+//             //appendChild() accepts only node element
+//             //newRow.appendChild(element);//Prompt an error, because we are appending "string" value(element) instead of a node
+
+//             newRow.innerHTML = element;
 //             table.appendChild(newRow);
 //         });
 
 //     });
+
+
+// Optimized solution
+
+const createRow = (user) => {
+    let newRow = document.createElement("tr");
+    let element = `
+        <td>${user.id}</td>
+        <td>${user.name}</td>
+        <td>${user.email}</td>
+        <td>${user.username}</td>
+    `
+    newRow.innerHTML = element;
+    return newRow;
+}
+
+fetch('https://jsonplaceholder.typicode.com/users')
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        data.forEach(user => {
+            table.appendChild(createRow(user));
+        });
+    });
